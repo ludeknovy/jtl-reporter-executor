@@ -1,0 +1,21 @@
+execution:
+  - concurrency: 20
+    ramp-up: 1m
+    hold-for: 5m
+    scenario: test
+
+settings:
+  env:
+    BASE_URL: yourBaseUrl.com
+    SCENARIO: test-scenario
+    PROJECT: test-project
+  artifacts-dir: logs/%Y-%m-%d_%H-%M-%S.%f
+
+modules:
+  jmeter:
+    csv-jtl-flags:
+      sentBytes: true
+
+scenarios:
+  test:
+    script:
